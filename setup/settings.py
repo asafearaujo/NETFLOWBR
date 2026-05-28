@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-tl%s+pii99e6x%gs0r9&q3f=(!vyu^dcy4787x&3*a&0i2^km#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['netflowbr.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 

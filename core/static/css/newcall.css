@@ -1,0 +1,10 @@
+ :root {
+            --azul-br: #004085; /* Azul aproximado da marca */
+        }
+        body { background-color: #e4e4e4; }
+        .navbar-br { background-color: var(--azul-br); color: rgb(255, 255, 255); padding: 15px; }
+        .card-header { background-color: var(--azul-br) !important; color: rgb(255, 255, 255); }
+        .btn-primary { background-color: var(--azul-br); border: none; }
+        .btn-primary:hover { background-color: #003366; }
+
+

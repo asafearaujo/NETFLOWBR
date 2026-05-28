@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NETFLOWBR{% endblock %}</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/newcall.css' %}">
+</head>
+<body>
+
+    <nav class="navbar-br shadow-sm mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="{% url 'lista_chamados' %}" class="text-white text-decoration-none fw-bold text-uppercase">
+                <i class="bi bi-broadcast"></i> NETFLOWBR
+            </a>
+            <div class="text-white small">Portal do Técnico</div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+                {% if message.tags == 'success' %}
+                    <i class="bi bi-check-circle-fill me-2"></i> {% elif message.tags == 'warning' or message.tags == 'error' %}
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i> {% endif %}
+                
+                {{ message }}
+                
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="mt-5 py-4 text-center text-muted small border-top">
+        <p>© 2026 NETFLOWBR | Desenvolvido com Python & Django</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
